@@ -1,0 +1,8 @@
+/**
+* Step 1 - start
+* step 2 - shell prompt
+* step 3  - input command
+* step 4 - shell checks if command is built-in or executable
+* step 5 - if its built-in execute else display shell prompt
+* step 6 - display new line
+*/
