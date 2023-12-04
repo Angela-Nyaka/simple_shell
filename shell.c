@@ -35,3 +35,27 @@ void execute_command(const char *command)
 {
 
 }
+
+
+/*We start the algorithm*/
+/*
+ * We call the above functions
+ *
+ * return 0, when successful
+ */
+
+int main(void)
+{
+	char command[120];
+
+
+	while (true)
+	{
+		display_prompt();
+		read_command(command, sizeof(command);
+		execute_command(command);
+	}
+	
+	return 0;
+
+}
