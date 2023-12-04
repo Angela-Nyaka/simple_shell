@@ -16,10 +16,10 @@ void display_prompt(void)
 
 /*we use a function to write out the message prompted from user*/
 
-void an&tnprintf(const char *message)
-{
+//void an&tnprintf(const char *message)
+//{
 
-}
+//}
 
 
 /*we use a function to read the specified command*/
