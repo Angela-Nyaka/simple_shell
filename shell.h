@@ -11,6 +11,8 @@
 #include <string.h>
 #include <unistd.h>
 #include <stdbool.h>
+#include <sys/types.h>
+#include <sys/wait.h>
 
 /*
  * I'll explain later
