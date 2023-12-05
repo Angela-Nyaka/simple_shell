@@ -17,9 +17,9 @@ void execute_command(const char *command)
 	else if (child_pid == 0)
 	{
 
-		//For child process
+		/*For child process*/
 
-		//Parsing the command and its arguments
+		/*Parsing the command and its arguments*/
 
 		char *args[128]; /* Maximum 128 arguments, adjust as needed*/
 		int arg_count = 0;
@@ -41,7 +41,7 @@ void execute_command(const char *command)
 	}
 	else
 	{
-		//Parent process
+		/*Parent process*/
 		wait(NULL);
 	}
 }

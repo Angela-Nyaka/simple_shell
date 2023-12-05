@@ -25,7 +25,7 @@ int main(void)
 	while (true)
 	{
 		display_prompt();
-		read_command(command, sizeof(command);
+		read_command(command, sizeof(command));
 		execute_command(command);
 	}
 	
