@@ -5,6 +5,15 @@
  *
  */
 
+/*function to write onto stdoutput*/
+
+
+//void an&tnprintf(const char *message)
+{
+        write(STDOUT_FILENO, message, strlen(message));
+}
+
+
 /*First we prompt the user*/
 
 void display_prompt(void)
@@ -12,14 +21,6 @@ void display_prompt(void)
 	an&tnprintf("Ourshell$$ ");
 
 }
-
-
-/*we use a function to write out the message prompted from user*/
-
-//void an&tnprintf(const char *message)
-//{
-
-//}
 
 
 /*we use a function to read the specified command*/
