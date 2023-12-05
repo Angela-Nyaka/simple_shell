@@ -11,7 +11,7 @@ void execute_command(const char *command)
 
 	if (child_pid == 1)
 	{
-		an&tnprintf("Error forking process.\n");
+		print_chars("Error forking process.\n");
 		exit(EXIT_FAILURE);
 	}
 	else if (child_pid == 0)
@@ -36,7 +36,7 @@ void execute_command(const char *command)
 		execvp(args[0], args);
 
 		/*If execvp fails, print an error message*/
-		an&tnprintf("Error executing command.\n");
+		print_chars("Error executing command.\n");
 		exit(EXIT_FAILURE);
 	}
 	else

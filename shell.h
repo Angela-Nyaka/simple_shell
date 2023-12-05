@@ -18,7 +18,7 @@
  */
 
 void display_prompt(void);
-void an&tn_printf(constant char *message);
+void print_chars(constant char *message);
 void read_command(char *command, size_t size);
 void execute_command(const char *command);
 

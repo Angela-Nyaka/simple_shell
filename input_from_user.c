@@ -11,12 +11,12 @@ void read_command(char *command, size_t size)
 	{
 		if (feof(stdin))
 		{
-			an&tnprintf("\n");
+			print_chars("\n");
 			exit(EXIT_SUCCESS);
 		}
 		else 
 		{
-			an&tnprintf("Error reading user input data.\n");
+			print_chars("Error reading user input data.\n");
 			exit(EXIT_FAILURE);
 		}
 

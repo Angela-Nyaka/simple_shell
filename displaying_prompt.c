@@ -8,5 +8,5 @@
 
 void display_prompt(void)
 {
-        an&tnprintf("Ourshell$$ ");
+       print_chars("Ourshell$$ ");
 }

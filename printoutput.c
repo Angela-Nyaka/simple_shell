@@ -1,6 +1,6 @@
 #include "shell.h"
 
-void an&tnprintf(const char *message)
+void print_chars(const char *message)
 {
 	write(STDOUT_FILENO, message, strlen(message));
 }
