@@ -1,5 +1,5 @@
-#ifndef OURSHELL_H
-#define OURSHELL_H
+#ifndef SHELL_H
+#define SHELL_H
 
 /*
  * Explain Later
@@ -24,4 +24,4 @@ void execute_command(const char *command);
 
 
 #endif
-/* OURSHELL_H */
+/*SHELL_H*/
