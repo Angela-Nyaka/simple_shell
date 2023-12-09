@@ -1,6 +1,5 @@
 #include "shell.h"
 
-
 /*
 *
 *1)function to write onto stdoutput
@@ -18,7 +17,7 @@
 */
 
 int main(void)
-i{
+{
 	char command[120];
 
 

@@ -1,11 +1,6 @@
 #ifndef SHELL_H
 #define SHELL_H
 
-/*
- * Explain Later
- * 
- */
-
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
@@ -14,10 +9,9 @@
 #include <sys/types.h>
 #include <sys/wait.h>
 
-/*
- * I'll explain later
- *
- */
+/*extrnal variable used for execve function*/
+
+extern char **environ;
 
 void command_prompt(void);
 void print_chars(const char *message);
