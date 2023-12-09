@@ -23,4 +23,9 @@ void read_command(char *command, size_t size)
 	}
 	/*Remove new line*/
 	command[strcspn(command, "\n")] = '\0';
+
+	if (strcmp(input, "exit") == 0)
+	{
+		exit_shell();
+	}
 }
