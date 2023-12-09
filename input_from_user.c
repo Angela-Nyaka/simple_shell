@@ -5,6 +5,12 @@
  *
  */
 
+void exit_shell()
+{
+    printf("Exiting the shell.\n");
+    exit(0);
+}
+
 void read_command(char *command, size_t size)
 {
 	if (fgets(command, size, stdin) == NULL)
@@ -24,7 +30,7 @@ void read_command(char *command, size_t size)
 	/*Remove new line*/
 	command[strcspn(command, "\n")] = '\0';
 
-	if (strcmp(input, "exit") == 0)
+	if (strcmp(command, "exit") == 0)
 	{
 		exit_shell();
 	}
