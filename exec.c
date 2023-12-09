@@ -1,9 +1,10 @@
 #include "shell.h"
-
-/*
- * Explain later
- *
- */
+/**
+* execute_command - executes user command
+*@command: instruction from user
+*
+*return: nothing
+*/
 
 void execute_command(const char *command)
 {
@@ -25,6 +26,7 @@ void execute_command(const char *command)
 		int arg_count = 0;
 
 		char *token = strtok((char *)command, " ");
+
 		while (token != NULL)
 		{
 			args[arg_count++] = token;

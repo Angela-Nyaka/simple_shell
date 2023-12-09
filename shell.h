@@ -19,7 +19,7 @@
  *
  */
 
-void display_prompt(void);
+void command_prompt(void);
 void print_chars(const char *message);
 void read_command(char *command, size_t size);
 void execute_command(const char *command);
