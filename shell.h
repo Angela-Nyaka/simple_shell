@@ -18,5 +18,6 @@ void print_chars(const char *message);
 void read_command(char *command, size_t size);
 void execute_command(const char *command);
 size_t  _strlen(const char *s);
+int _strcmp(char *s1, char *s2);
 
 #endif

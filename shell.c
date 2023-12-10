@@ -25,7 +25,11 @@ int main(void)
 	{
 		command_prompt();
 		read_command(command, sizeof(command));
-		execute_command(command);
+	if (_strcmp(command, "exit") == 0)
+	{
+		break;
+	}
+	execute_command(command);
 	}
 	return (0);
 
