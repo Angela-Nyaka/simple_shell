@@ -10,19 +10,18 @@ void execute_command(const char *command)
 {
 	pid_t child_pid = fork();
 
-	if (child_pid == 1)
+	if (child_pid == -1)
 	{
 		print_chars("Error forking process.\n");
 		exit(EXIT_FAILURE);
-	}
-	else if (child_pid == 0)
+	}	else if (child_pid == 0)
 	{
 
 		/*For child process*/
 
 		/*Parsing the command and its arguments*/
 
-		char *args[128]; /* Maximum 128 arguments, adjust as needed*/
+		char *args[128];/* Maximum 128 arguments, adjust as needed*/
 		int arg_count = 0;
 
 		char *token = strtok((char *)command, " ");
@@ -35,7 +34,7 @@ void execute_command(const char *command)
 		args[arg_count] = NULL;/*NULL-terminate the arguments array*/
 
 		/*Execute the command*/
-		/* execvp(args[0], args);*/
+		/*execvp(args[0], args);*/
 		execve(args[0], args, environ);
 		/*If execvp fails, print an error message*/
 		print_chars("Error executing command.\n");

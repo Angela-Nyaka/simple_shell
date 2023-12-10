@@ -1,7 +1,7 @@
 #include "shell.h"
 
-/*
-*command_prompt-  Displays Ourshell$$ promptin the user
+/**
+*command_prompt -  Displays Ourshell$$ promptin the user
 *
 *Return: nothing
 */
