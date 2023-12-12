@@ -35,13 +35,9 @@ void execute_command(const char *command)
 
 		
 		/*Execute the command*/
-		/*execvp(args[0], args);*/
-		if (execve(args[0], args, environ) == -1)
-		{
-			/*If execvp fails, print an error message*/
-			perror("./shell: No such file or directory\n");
-			exit(EXIT_FAILURE);
-		}
+		execvp(args[0], args);
+		print_chars("./shell: No such file or directory\n");
+		exit(EXIT_FAILURE);
 	}
 	else
 	{
