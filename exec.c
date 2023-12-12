@@ -33,12 +33,15 @@ void execute_command(const char *command)
 		}
 		args[arg_count] = NULL;/*NULL-terminate the arguments array*/
 
+		
 		/*Execute the command*/
 		/*execvp(args[0], args);*/
-		execve(args[0], args, environ);
-		/*If execvp fails, print an error message*/
-		print_chars("Error executing command.\n");
-		exit(EXIT_FAILURE);
+		if (execve(args[0], args, environ) == -1)
+		{
+			/*If execvp fails, print an error message*/
+			perror("./shell: No such file or directory\n");
+			exit(EXIT_FAILURE);
+		}
 	}
 	else
 	{
