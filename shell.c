@@ -29,7 +29,7 @@ int main(void)
 	{
 		break;
 	}
-	execute_command(command);
+	run_command(cmd, counter, argv[0]);
 	}
 	return (0);
 

@@ -19,10 +19,11 @@ extern char **environ;
 void command_prompt(void);
 void print_chars(const char *message);
 void read_command(char *command, size_t size);
- void run_command(char *cmd, int counter, char *pg_name);
+/*void execute_command(const char *command);*/
+void run_command(char *cmd, int counter, char *pg_name);
 size_t  _strlen(const char *s);
 int _strcmp(char *s1, char *s2);
 int _builtin(int argument_count, char *arguments[], int session_count, char *pg_name, int *status);
+void print_error(int session_counter, char *args[], char *program_name);
 void print_chars(const char *chars);
- void print_error(int session_counter, char *args[], char *program_name);
 #endif
