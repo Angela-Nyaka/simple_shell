@@ -22,7 +22,7 @@ void execute_command(const char *command)
 
         /* Parsing the command and its arguments */
 
-        // Use dynamic memory allocation for arguments
+        /*Use dynamic memory allocation for arguments*/
         char *args[128]; /* Adjust as needed */
         int arg_count = 0;
 
@@ -30,14 +30,16 @@ void execute_command(const char *command)
 
         while (token != NULL)
         {
-            // Handle quotes to keep arguments with spaces together
+        
+	char *end_quote;
+	/*Handle quotes to keep arguments with spaces together*/
             if (token[0] == '\"')
             {
-                token++; // Skip the opening quote
-                char *end_quote = strchr(token, '\"');
+                token++;
+		end_quote = strchr(token, '\"');
                 if (end_quote != NULL)
                 {
-                    *end_quote = '\0'; // Replace closing quote with null terminator
+                    *end_quote = '\0'; /*Replace closing quote with null terminator*/
                 }
             }
 
@@ -49,7 +51,7 @@ void execute_command(const char *command)
         /* Execute the command with execve */
         if (execve(args[0], args, NULL) == -1)
         {
-            perror("./shell"); // Print detailed error message
+            perror("./shell"); /*Print detailed error message*/
             exit(EXIT_FAILURE);
         }
     }
