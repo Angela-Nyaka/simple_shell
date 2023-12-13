@@ -1,21 +1,20 @@
 #include "shell.h"
 
-
 /*
- * 
- *1)function to write onto stdoutput
- *2) prompt the user
- *3)we use a function to read the specified command
- *4)we then execute the given command
- *
+*
+*1)function to write onto stdoutput
+*2) prompt the user
+*3)we use a function to read the specified command
+*4)we then execute the given command
+*
 */
 
 
-/*
- * We call the above functions
- *
- * return 0, when successful
- */
+/**
+*main - excutes shell commands
+*
+*Return: nothing
+*/
 
 int main(void)
 {
@@ -24,11 +23,14 @@ int main(void)
 
 	while (true)
 	{
-		display_prompt();
+		command_prompt();
 		read_command(command, sizeof(command));
-		execute_command(command);
+	if (_strcmp(command, "exit") == 0)
+	{
+		break;
 	}
-	
-	return 0;
+	execute_command(command);
+	}
+	return (0);
 
 }

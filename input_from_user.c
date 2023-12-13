@@ -1,8 +1,11 @@
 #include "shell.h"
 
-/*
- *Reabing user input data
+/**
+ *read_command- Reading user input data
+ *@command: input
+ *@size: size of characters
  *
+ *return: nothing
  */
 
 void exit_shell()
@@ -20,7 +23,7 @@ void read_command(char *command, size_t size)
 			print_chars("\n");
 			exit(EXIT_SUCCESS);
 		}
-		else 
+		else
 		{
 			print_chars("Error reading user input data.\n");
 			exit(EXIT_FAILURE);
