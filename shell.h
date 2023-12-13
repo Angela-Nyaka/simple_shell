@@ -11,7 +11,7 @@
 
 /*extrnal variable used for execve function*/
 
-extern char **environ;
+/*extern char **environ;*/
 
 void command_prompt(void);
 void print_chars(const char *message);
