@@ -7,7 +7,7 @@
  * Return: nothing
  */
 
-void execute_command(const char *command)
+void eexecute_command(const char *command)
 {
     pid_t child_pid = fork();
 
