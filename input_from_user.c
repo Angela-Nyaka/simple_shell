@@ -7,19 +7,19 @@
 
 void exit_shell(void)
 {
-printf("Exiting the shell.\n");
-exit(0);
+	print_chars("Exiting the shell.\n");
+	exit(0);
 }
 /**
 *read_command- Reading user input data
-*@command: input
+*@ex_code: input
 *@size: size of characters
 *
 *return: nothing
 */
-void read_command(char *command, size_t size)
+void read_command(char *ex_code, size_t size)
 {
-	if (fgets(command, size, stdin) == NULL)
+	if (fgets(ex_code, size, stdin) == NULL)
 	{
 		if (feof(stdin))
 		{
@@ -34,9 +34,9 @@ void read_command(char *command, size_t size)
 
 	}
 	/*Remove new line*/
-	command[strcspn(command, "\n")] = '\0';
+	ex_code[strcspn(ex_code, "\n")] = '\0';
 
-	if (strcmp(command, "exit") == 0)
+	if (_strcmp(ex_code, "exit") == 0)
 	{
 		exit_shell();
 	}

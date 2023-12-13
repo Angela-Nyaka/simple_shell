@@ -1,12 +1,12 @@
 #include "shell.h"
 /**
 * execute_command - executes user command
-*@command: instruction from user
+*@ex_code: instruction from user
 *
 *return: nothing
 */
 
-void execute_command(const char *command)
+void execute_command(const char *ex_code)
 {
 	pid_t child_pid = fork();
 
@@ -24,7 +24,7 @@ void execute_command(const char *command)
 		char *args[128];/* Maximum 128 arguments, adjust as needed*/
 		int arg_count = 0;
 
-		char *token = strtok((char *)command, " ");
+		char *token = strtok((char *)ex_code, " ");
 
 		while (token != NULL)
 		{

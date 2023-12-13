@@ -18,18 +18,18 @@
 
 int main(void)
 {
-	char command[120];
+	char ex_code[400];
 
 
 	while (true)
 	{
 		command_prompt();
-		read_command(command, sizeof(command));
-	if (_strcmp(command, "exit") == 0)
+		read_command(ex_code, sizeof(ex_code));
+	if (_strcmp(ex_code, "exit") == 0)
 	{
 		break;
 	}
-	execute_command(command);
+	execute_command(ex_code);
 	}
 	return (0);
 
