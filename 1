@@ -1,22 +1,19 @@
 #include "shell.h"
 
 /**
- *exit_shell- Reading user input data
+ *read_command- Reading user input data
+ *@command: input
+ *@size: size of characters
+ *
  *return: nothing
  */
 
 void exit_shell(void)
 {
-printf("Exiting the shell.\n");
-exit(0);
+    printf("Exiting the shell.\n");
+    exit(0);
 }
-/**
-*read_command- Reading user input data
-*@command: input
-*@size: size of characters
-*
-*return: nothing
-*/
+
 void read_command(char *command, size_t size)
 {
 	if (fgets(command, size, stdin) == NULL)

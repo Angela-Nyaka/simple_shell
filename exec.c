@@ -32,7 +32,6 @@ void execute_command(const char *command)
 			token = strtok(NULL, " ");
 		}
 		args[arg_count] = NULL;/*NULL-terminate the arguments array*/
-		
 		/*Execute the command*/
 		execvp(args[0], args);
 		print_chars("./shell: No such file or directory\n");
