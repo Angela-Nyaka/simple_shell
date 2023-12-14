@@ -1,45 +1,49 @@
 #include "shell.h"
 /**
-* execute_command - executes user command
-*@ex_code: instruction from user
-*
-*return: nothing
-*/
-
-void execute_command(const char *ex_code)
+ * run_command - executes a given command
+ * @cmd: command to be executed
+ * @counter: number of commands executed
+ * @pg_name: name of the porgram used
+ *
+ * Description: This function will execute a command
+ * by attempting to execute a programm at the dir given
+ * Return: Returns nothing
+ */
+void run_command(char *cmd, int counter, char *pg_name)
 {
-	pid_t child_pid = fork();
+	char *args[ARGS_LIMIT];
+	int argc = 0;
+	static int exit_status;
+	pid_t pid;
 
-	if (child_pid == -1)
+	/* split the command to get the program path */
+	char *token = strtok(cmd, " \t\n");
+
+	counter++;
+	while (token != NULL && argc < ARGS_LIMIT - 1)
 	{
-		print_chars("Error forking process.\n");
+		args[argc] = token;
+		argc++;
+		token = strtok(NULL, " \t\n");
+	}
+	args[argc] = NULL;
+	if (args[0] == NULL)
+		return;
+	if (built_in(argc, args, counter, pg_name, &exit_status))
+		return;
+	pid = fork();
+
+	if (pid < 0)
+	{
+		perror("fork");
 		exit(EXIT_FAILURE);
-	}	else if (child_pid == 0)
+	}
+	else if (pid == 0)
 	{
-
-		/*For child process*/
-
-		/*Parsing the command and its arguments*/
-
-		char *args[128];/* Maximum 128 arguments, adjust as needed*/
-		int arg_count = 0;
-
-		char *token = strtok((char *)ex_code, " ");
-
-		while (token != NULL)
-		{
-			args[arg_count++] = token;
-			token = strtok(NULL, " ");
-		}
-		args[arg_count] = NULL;/*NULL-terminate the arguments array*/
-		/*Execute the command*/
-		execvp(args[0], args);
-		print_chars("./shell: No such file or directory\n");
+		execve(args[0], args, NULL);
+		print_error(counter, args, pg_name);
 		exit(EXIT_FAILURE);
 	}
 	else
-	{
-		/*Parent process*/
-		wait(NULL);
-	}
+		waitpid(pid, &exit_status, 0);
 }
